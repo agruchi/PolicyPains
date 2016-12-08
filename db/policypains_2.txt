@@ -1,0 +1,176 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema policypains
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema policypains
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `policypains` DEFAULT CHARACTER SET utf8 ;
+USE `policypains` ;
+
+-- -----------------------------------------------------
+-- Table `policypains`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`user` (
+  `userid` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`userid`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`registration`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`registration` (
+  `registerid` INT NOT NULL AUTO_INCREMENT,
+  `userid` INT NOT NULL,
+  `firstname` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  `middlename` VARCHAR(45) NOT NULL,
+  `usertitle` VARCHAR(45) NULL,
+  `gender` VARCHAR(1) NOT NULL,
+  `occupation` VARCHAR(45) NULL,
+  `usertype` VARCHAR(45) NOT NULL,
+  `addressid` INT NOT NULL,
+  `registration_registerid` INT NOT NULL,
+  PRIMARY KEY (`registerid`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`address`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`address` (
+  `address1` VARCHAR(200) NULL,
+  `address2` VARCHAR(200) NOT NULL,
+  `address3` VARCHAR(200) NULL DEFAULT CURRENT_TIMESTAMP,
+  `city` VARCHAR(45) NOT NULL,
+  `state` VARCHAR(45) NULL,
+  `country` VARCHAR(45) NULL,
+  `pincode` VARCHAR(45) NULL,
+  `phone` VARCHAR(45) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `address_registration`
+    FOREIGN KEY (`id`)
+    REFERENCES `policypains`.`registration` (`registerid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`user_registration`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`user_registration` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userid` INT NOT NULL,
+  `registrationid` INT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`policy`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`policy` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(45) NOT NULL,
+  `purchase_source` VARCHAR(45) NULL,
+  `purchase_date` DATETIME NOT NULL,
+  `number_of_premiums_paid` INT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`complaint`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`complaint` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userid` INT NOT NULL,
+  `subject` VARCHAR(45) NOT NULL,
+  `policyid` INT NOT NULL,
+  `comlaint_type` VARCHAR(45) NOT NULL,
+  `complaint_details` VARCHAR(45) NOT NULL,
+  `complaint_date` DATETIME NULL,
+  PRIMARY KEY (`id`),
+  INDEX `complaint_policy_idx` (`policyid` ASC),
+  CONSTRAINT `complaint_registration`
+    FOREIGN KEY (`id`)
+    REFERENCES `policypains`.`registration` (`registerid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `complaint_policy`
+    FOREIGN KEY (`policyid`)
+    REFERENCES `policypains`.`policy` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`document`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`document` (
+  `policyid` INT NOT NULL,
+  `title` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(500) NOT NULL,
+  `scan` VARCHAR(45) NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  INDEX `document_policy_idx` (`policyid` ASC),
+  CONSTRAINT `document_policy`
+    FOREIGN KEY (`policyid`)
+    REFERENCES `policypains`.`policy` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`follow-up`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`follow-up` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `company_response_date` DATETIME NOT NULL,
+  `company_response` VARCHAR(500) NULL,
+  `company_action_taken` VARCHAR(500) NULL,
+  `customer_feedback` VARCHAR(500) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `policypains`.`follow-up_transaction`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `policypains`.`follow-up_transaction` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `customerid` INT NOT NULL,
+  `followupid` INT NOT NULL,
+  `reprsentativeid` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `followup_user_idx` (`followupid` ASC),
+  INDEX `followup_user_idx1` (`customerid` ASC),
+  CONSTRAINT `followup-transaction_followup`
+    FOREIGN KEY (`followupid`)
+    REFERENCES `policypains`.`follow-up` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `followup_user`
+    FOREIGN KEY (`customerid`)
+    REFERENCES `policypains`.`user` (`userid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

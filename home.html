@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	
+		
+			<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		
+		
+	 
+	
+	
+	<!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MyReferralApp</title>
+	<!-- Include bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="/style/partner/style.css" 	rel="stylesheet">
+	<link type="text/css" href="/style/partner/jquery-ui-1.8.16.custom-grey.css" rel="stylesheet" /> 
+		
+	<link href="/style/style.css" 	rel="stylesheet">
+	
+	<!-- Include jQuery and bootstrap JS plugins -->
+	<script type="text/javascript" charset="utf-8" src="/js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/js/radio.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/js/common.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/script/jquery.blockUI.js"></script>
+	<!-- <script>
+	(function ($, global) {
+		var URI = window.location.href;
+		  if(URI.indexOf('viewMyLeadsDetails.htm') == 34 || URI.indexOf('customerDeatilsById.htm') == 34 || URI.indexOf('viewMyEarningCloseDetails.htm') == 34 || URI.indexOf('getLeadDetailsForEarning.htm') == 34) {}
+		else
+			{  
+	    var _hash = "!",
+	    noBackPlease = function () {
+	        global.location.href += "#";
+
+	        setTimeout(function () {
+	            global.location.href += "!";
+	        }, 50);
+	    };
+
+	    global.setInterval(function () {
+	        if (global.location.hash != _hash) {
+	            global.location.hash = _hash;
+	        }
+	    }, 100);
+
+	    global.onload = function () {
+	        noBackPlease();
+
+	        // disables backspace on page except on input fields and textarea..
+	        $(document.body).keydown(function (e) {
+	            var elm = e.target.nodeName.toLowerCase();
+	            if (e.which == 8 && elm !== 'input' && elm  !== 'textarea') {
+	                e.preventDefault();
+	            }
+	            // stopping event bubbling up the DOM tree..
+	            e.stopPropagation();
+	        });
+	    }
+	  } 
+
+	})(jQuery, window);
+</script>  -->
+	<script type="text/javascript">
+		var unhandledExMsg = 'System encountered technical error.Please try after some time.';
+		var sessionExpiresMsg = 'Your session has expired. Kindly click on Login button to re-login.';
+		var ajaxTimeout  = '3000';
+		ajaxTimeout = new Number(ajaxTimeout);
+
+	</script>
+	<script>
+		$(document).ready(function(){
+			if(screen.width <= 792)
+			{
+				$('.show-nav-data').hide();
+			}
+			else
+			{
+				$('.show-nav-data').show();
+			}	
+			$(".show-nav-btn").click(function(){
+		        $(".show-nav-data").toggle();
+		    });
+		});
+		/* window.onorientationchange = function() 
+		{
+			alert($( ".show-nav-data" ).is( ":visible" ));
+			if($( ".show-nav-data" ).is( ":visible" ))
+			{
+				$(".show-nav-data").toggle();
+			}
+		}; */
+		$(window).onorientationchange = function() {
+			if(screen.width >= 792)
+			{
+				$('.show-nav-data').show();
+			}else{
+				$('.show-nav-data').hide();
+			}
+			
+		};
+
+</script>
+<style type="text/css">
+/* 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden; */
+	#element {
+    	position: fixed;
+	    transform: translateZ(0);
+	    -moz-transform: translatez(0);
+	    -ms-transform: translatez(0);
+	    -o-transform: translatez(0);
+	    -webkit-transform: translateZ(0);
+	    -webkit-font-smoothing: antialiased;
+	    -webkit-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	    }
+</style>
+</head>
+<body>
+
+<input id="t1" type ="hidden" value='ag&#95;ruchi&#64;yahoo&#46;com'/>
+<input id="t2" type ="hidden" value='Ruchi&#32;A'/> 
+	<!-- Site header and navigation -->
+	<header class="top" role="header" id="divHeader">
+		<!--Start of Zopim Live Chat Script-->
+		<script type="text/javascript">
+		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+		$.src="//v2.zopim.com/?46EIOBR0BGs1a4BUVbaq8m4qRTSQml9G";z.t=+new Date;$.
+		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+		
+		$zopim(function() {
+		    $zopim.livechat.setName($("#t2").val());
+		    $zopim.livechat.setEmail($("#t1").val());		    
+		  });
+		</script>
+<!--End of Zopim Live Chat Script-->
+		
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="refresh" content="1800;url=expired.jsp">
+<script type="text/javascript">
+			var mydate = new Date();
+			var year = mydate.getYear();
+			if (year < 1000)
+			{
+				year += 1900;
+			}
+			var day = mydate.getDay();
+			var month = mydate.getMonth();
+			var daym = mydate.getDate();
+			if (daym < 10)
+			{
+				daym = "0" + daym;
+			}
+			var dayarray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+			var montharray = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+
+			function GetClock(){
+				var Digital = new Date();
+				var hours = Digital.getHours();
+				var minutes = Digital.getMinutes();
+				var seconds = Digital.getSeconds();
+				var dn = "AM";
+
+				if (hours >= 12) 
+				{
+					dn = "PM";
+					hours = hours - 12;
+					if(hours < 10)
+					{
+						hours = "0" + hours;
+					}
+				}
+				if (hours == 0)
+				{
+					hours = 12;
+				}
+				if (minutes <= 9)
+				{
+					minutes = "0" + minutes;
+				}
+				if (seconds <= 9)
+				{
+					seconds = "0" + seconds;
+				}
+				document.getElementById("dateBox").innerHTML = dayarray[day] + ", " + daym + "-" + montharray[month] + "-" + year;
+				document.getElementById("clockBox").innerHTML = hours + ":" + minutes + ":" + seconds + " " + dn;
+			}
+	$(document).ready(function(){
+		
+		GetClock();
+		setInterval(GetClock,1000);
+		
+	});
+	$(window).load(function() {
+		var isAnyLeadClosed='false';
+		var message = "Congratulation! One of your references has led to conversion, to earn your Referral Amount, kindly complete your empanelment formalities.    ";
+		if(isAnyLeadClosed=="true")
+		{
+			alert(message);
+		}
+	});
+</script>
+
+
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		var loginName = $("#loginName").val();
+		if((loginName.length) > 13){
+		var seperatedName = loginName.substr(0,13);
+		document.getElementById("sepratedName").innerHTML = seperatedName + "...";
+		}
+		else {
+			document.getElementById("sepratedName").innerHTML = loginName;
+		}
+	});
+</script>
+
+<body>
+<div class="ie-8-bg">
+	<div class="container">
+		<span  class="navbar-brand pull-left" style="margin-top: 6px; padding-left: 0px"> 
+						
+			
+			
+				
+					<img src="images/logo.png" alt="logo" />
+				
+				
+			 
+			
+			
+		</span>
+		<div class="pull-right menu-items-div">
+			<!--<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </button>-->
+			<nav class="navbar-collapse collapse pull-left" role="navigation" style="background-color:#fff;">
+				<ul class="navbar-nav nav">
+					<!-- <li><a href="#">Home</a></li> -->
+					<li><a href="aboutUs.htm" target="_blank">About Us</a></li>
+					<li><a href="aboutTheProgram.htm" target="_blank">About the Program</a></li>
+					<!-- <li><a href="privacyPolicy.htm" target="_blank">Privacy Policy</a></li>
+					<li><a href="disclaimer.htm" target="_blank">Disclaimer</a></li> -->
+					<li><a href="featureOfferings.htm" target="_blank">Feature Offerings</a></li>
+					<li><a href="lob.htm" target="_blank">Line Of Business</a></li>
+					<li><a href="trainingVideo.htm" target="_blank">How To Get Started</a></li>
+					<!-- <li><a href="contact.htm" target="_blank">Contact Us</a></li> -->
+				</ul>
+			</nav>
+			<div class="pull-left user-info ">
+                <div class="user-info-cont">
+                	 
+					<strong>Welcome</strong>&nbsp;&nbsp;<span id="sepratedName" title="Ruchi&#32;A"></span><br>
+					
+					
+					<strong>Role:</strong>
+					PARTNER
+					
+				</div>
+			</div>
+			<div class="pull-right" id="logout-bg">
+				<a href="logout">LOGOUT</a><br> 
+				<span id="dateBox"></span><br>
+				<span id="clockBox"></span>
+			</div>
+			<!--- logout bg --->
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<input type="hidden" id="loginName" value="Ruchi&#32;A"/> 
+</div>
+</body>
+</html>
+	</header>
+	<!-- Middle content section -->
+	<div class="middle" id="divBody">
+	<div style="width:100%;">
+            <button type="button" class="navbar-toggle collapsed show-nav-btn" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="padding:8px 6px !important; ">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			</div>
+		<div class="container ui-tabs ui-widget ui-widget-content ui-corner-all">
+			<!-- left Nav Starts -->
+			
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	setActiveClass();
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+var createdBy='amitg&#46;agr&#64;gmail&#46;com';
+var createdByUserName = "AUTO,HOBO";
+var createdByUserNameArr = createdByUserName.split(",");
+for(var i=0;i<createdByUserNameArr.length;i++)
+{
+	if(null!=createdBy && createdByUserNameArr[i].toLowerCase()===createdBy.toLowerCase())
+	{
+		$("#acquirePartner").hide();
+		$("#partnerLeads").hide();
+		
+		break;
+	}	
+}
+});
+function setActiveClass()
+{
+	var urlText = window.location.href;
+	/*Partner Login*/
+	if(urlText.indexOf("empanelPartner.htm") != -1){
+		$('#empanelment').addClass('active');
+	}
+	else if(urlText.indexOf("acquirePartner.htm") != -1){
+		$('#acquirePartner').addClass('active');
+	}
+	else if(urlText.indexOf("myLeads.htm") != -1){
+		$('#myLeads').addClass('active');
+	}
+	else if(urlText.indexOf("partnerLeads.htm") != -1){
+		$('#partnerLeads').addClass('active');
+	}
+	else if(urlText.indexOf("caseCountDetails.htm") != -1){
+		$('#partnerLeads').addClass('active');
+	}
+	else if(urlText.indexOf("getLeadDetailsForSubPartnerLead.htm") != -1){
+		$('#partnerLeads').addClass('active');
+	}
+	
+	else if(urlText.indexOf("myEarning.htm") != -1){
+		$('#myEarnings').addClass('active');
+	}
+	else if(urlText.indexOf("partnerDashboard.htm") != -1){
+		$('#partnerDashboard').addClass('active');
+	}
+	else if(urlText.indexOf("partnerDashboardbk.htm") != -1){
+		$('#partnerDashboard').addClass('active');
+	}
+	
+	/*BD Login*/
+	else if(urlText.indexOf("acquirePartner.htm") != -1){
+		$('#acquirePartner').addClass('active');
+	}
+	else if(urlText.indexOf("sendLink.htm") != -1){
+		$('#acquirePartner').addClass('active');
+	}
+	
+	/*Finannce Login*/
+	else if(urlText.indexOf("payoutFinanceSearch.htm") != -1){
+		$('#financePayout').addClass('active');
+	}
+	/* Admin login */
+	else if(urlText.indexOf("leadDashBoard.htm") != -1){
+		$('#leadDashboard').addClass('active');
+	}
+	else if(urlText.indexOf("leadsCountPartner.htm") != -1){
+		$('#leadDashboard').addClass('active');
+	}
+	else if(urlText.indexOf("back.htm") != -1){
+		$('#leadDashboard').addClass('active');
+	}
+	/*BE Login*/
+	else if(urlText.indexOf("uploadReportedCases.htm") != -1){
+		$('#uploadReportCases').addClass('active');
+	}
+	else if(urlText.indexOf("downloadPayoutCases.htm") != -1){
+		$('#downloadPayoutCases').addClass('active');
+	}
+	
+	/*Verifier Login*/
+	else if(urlText.indexOf("verifierPartnerSearch.htm") != -1){
+		$('#verifierPartnerSearch').addClass('active');
+	}
+	else if(urlText.indexOf("doDeDupeSearch.htm") != -1){
+		$('#doDeDupeSearch').addClass('active');
+	}
+	else if(urlText.indexOf("searchDedupeView.htm")!=-1){
+		$('#doDeDupeSearch').addClass('active');
+	}
+	else if(urlText.indexOf("verifierSearchResult.htm") != -1){
+		$('#verifierPartnerSearch').addClass('active');
+	}
+	else if(urlText.indexOf("editEmpanelmentFormVerification.htm") != -1){
+		$('#verifierPartnerSearch').addClass('active');
+	}
+	else if(urlText.indexOf("submitVerifiedPartner.htm") != -1){
+		$('#verifierPartnerSearch').addClass('active');
+	}
+	
+	/* Finance Login*/
+	else if(urlText.indexOf("downloadPayoutCasesForFinance.htm")!=-1){
+			$("#financeDownloadCase").addClass('active');
+	}
+	else if(urlText.indexOf("changePassword.htm")!=-1){
+		$("#changePassword").addClass('active');
+}
+	
+}
+</script>
+
+<div class="col-md-3 cssmenu" id="left-nav">
+	
+		<ul class="nav show-nav-data navbar-collapse">
+		
+			<li id="partnerDashboard"><a href="partnerDashboard.htm">DASHBOARD</a></li>
+			<li id="empanelment"><a href="empanelPartner.htm">EMPANELMENT</a></li>
+			<li id="referralForm"><a href="referralForm.htm">REFERRAL FORM</a></li>
+						
+			
+			
+			
+			
+				
+					<li id="rateCard"><a href="selfRateCard.htm">RATE CARD</a></li>
+				 
+				<li id="myLeads"><a href="myLeads.htm">MY LEADS</a></li>
+				
+				
+								
+				
+					
+						<li id="partnerLeads"><a href="partnerLeads.htm">MY PARTNER'S LEADS</a></li>
+					
+				
+				
+					<li id="myEarnings"><a href="myEarning.htm">MY EARNINGS</a></li>			
+							
+				
+				
+					
+						<li id="acquirePartner"><a href="/acquirePartner.htm">ACQUIRE PARTNER</a></li>
+					
+				
+			
+			<li id="changePassword"><a href="changePassword.htm">CHANGE PASSWORD</a></li>
+		</ul>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
+			<!-- left Nav Ends -->
+			<div class="col-md-9 content top-title-content">
+				<div id="main-contnt" class="bordr-none">
+					<div>
+						
+
+<script type="text/javascript" charset="utf-8" src="/script/jquery.json-2.4.js"></script>
+<script type="text/javascript" charset="utf-8" src="/script/empanelment/json2.js"></script>
+<script type="text/javascript" charset="utf-8" src="/script/empanelment/empanelment.js"></script>
+<script type="text/javascript" charset="utf-8" src="/script/empanelment/empanelmentCore.js"></script>
+
+<script>
+(function ($, global) {
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+	var URI = window.location.href;
+	   
+    var _hash = "!",
+    noBackPlease = function () {
+        global.location.href += "#";
+
+        setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+   if(!isFirefox && !matchMedia('only screen and (max-width: 1024px)').matches)
+   {
+    	global.setInterval(function () {
+        if (global.location.hash != _hash) {
+            global.location.hash = _hash;
+        }
+    }, 100);
+    	
+   }
+
+    global.onload = function () {
+        noBackPlease();
+
+        // disables backspace on page except on input fields and textarea..
+        $(document.body).keydown(function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which == 8 && elm !== 'input' && elm  !== 'textarea') {
+                e.preventDefault();
+            }
+            // stopping event bubbling up the DOM tree..
+            e.stopPropagation();
+        });
+  } 
+
+})(jQuery, window);
+</script>
+
+<script type="text/javascript">
+    var partnerDetails = {"partnerId":2136,"partnerType":{"commonDataId":34,"commonDataTypeId":{"typeId":15,"typeName":"PARTNER TYPE"},"commonDataValue":"INDIVIDUAL","orderBy":null,"isActive":true,"lastModifiedDate":"Nov 24, 2014 11:42:17 AM"},"firstName":"Ruchi","middleName":null,"lastName":"A","dateOfBirth":null,"panCardNumber":null,"ackSlipNumber":null,"nameOnPanCard":null,"contactDetails":{"contactDetailsId":2012,"primaryNumber":"9322756977","alternateNumber1":null,"alternateNumber2":null,"emailAddress":"ag_ruchi@yahoo.com","alternateEmailAddress":null},"fatherFirstName":null,"fatherMiddleName":null,"fatherLastName":null,"educationDetails":null,"professionalDetails":null,"industrialExperience":null,"totalExperienceInYears":null,"totalExperienceInMonths":null,"bankDetails1":null,"bankDetails2":null,"firmName":null,"firmAuthSignPanNo":null,"firmAuthSignNameOnPan":null,"authSignDateOfBirth":null,"officeAddress":null,"proprietorshipName":null,"documentsRecieved":null,"currentAddress":null,"permanentAddress":null,"isSameAsCurrent":null,"remarks":null,"empanelStatus":null,"isApproved":null,"partnerCode":null,"dateOfGeneration":null,"lastModifiedDate":"Nov 29, 2016 1:37:46 PM","licenceId":null,"approvedBy":null,"approvalStatusId":null,"approvalDate":null,"approvalRemarks":null,"ispanCardApproved":null,"isBlocked":null,"reasonForBlocked":null,"createdByUser":"amitg.agr@gmail.com","createdByRole":{"roleId":2,"roleName":"PARTNER","roleDescription":"PARTNER","activities":[{"activityId":23,"activityName":"RATE_CARD","accessMaster":{"accessMasterId":2,"accessMasterName":"INTERNAL","accessMasterDesc":"FOR INTERANET USERS"}},{"activityId":22,"activityName":"MY_PARTNERS","accessMaster":{"accessMasterId":2,"accessMasterName":"INTERNAL","accessMasterDesc":"FOR INTERANET USERS"}},{"activityId":20,"activityName":"REFERRAL_FORM","accessMaster":{"accessMasterId":2,"accessMasterName":"INTERNAL","accessMasterDesc":"FOR INTERANET USERS"}},{"activityId":19,"activityName":"EMPANELMENT","accessMaster":{"accessMasterId":2,"accessMasterName":"INTERNAL","accessMasterDesc":"FOR INTERANET USERS"}},{"activityId":21,"activityName":"ACQUIRE_PARTNER","accessMaster":{"accessMasterId":2,"accessMasterName":"INTERNAL","accessMasterDesc":"FOR INTERANET USERS"}},{"activityId":5,"activityName":"MY_EARNINGS","accessMaster":{"accessMasterId":1,"accessMasterName":"EXTERNAL","accessMasterDesc":"FOR INTERNET USERS"}},{"activityId":4,"activityName":"MY_LEADS","accessMaster":{"accessMasterId":1,"accessMasterName":"EXTERNAL","accessMasterDesc":"FOR INTERNET USERS"}},{"activityId":3,"activityName":"RATE_CARD","accessMaster":{"accessMasterId":1,"accessMasterName":"EXTERNAL","accessMasterDesc":"FOR INTERNET USERS"}},{"activityId":2,"activityName":"REFERRAL_FORM","accessMaster":{"accessMasterId":2,"accessMasterName":"INTERNAL","accessMasterDesc":"FOR INTERANET USERS"}},{"activityId":1,"activityName":"EMPANELMENT","accessMaster":{"accessMasterId":2,"accessMasterName":"INTERNAL","accessMasterDesc":"FOR INTERANET USERS"}}]},"dateOfActivation":null,"emailId":"ag_ruchi@yahoo.com","mobileNo":"9322756977","creationDate":"Nov 29, 2016 1:37:46 PM","taxRegistration":null,"reason":null,"vendorDetails":null,"panCard":true,"serviceTaxUnchecked":true,"service":false,"tabName":"PARTNER DETAIL","ackSlip":false,"partnerName":"Ruchi A","fullName":"Ruchi A","isMobileAppUser":null};    
+    function check(id) 
+{
+	$( ".upper-title div" ).each(function( index ) {
+		 $(this).removeClass("higlight");
+		});
+	try{
+   $("#"+id).parent("div").addClass("higlight");
+	}
+	catch(e)
+	{
+//			alert(e);
+	}
+}
+    
+$(document).ready(function(){
+	
+	if (matchMedia('only screen and (max-width: 768px)').matches) 
+		{
+	       $.blockUI();
+		}
+		});
+	
+</script>
+
+<style>
+.label-prp{
+       background-color:#eaeceb !important;border: 0px !important;
+}
+.label-prp:focus{box-shadow:none !important;}
+
+
+
+</style>
+
+<div class="upper-title2" align="center">
+    	<div class="top-title">Empanelment</div>            		                
+</div>
+<div class="upper-title main-radio" align="center" id="divPartnerType" style="display: none;">
+	
+	<div class="">
+		<input type="radio" name="partnerType"  class="partnerType input_data" id="individual" value="34" onclick="check(this.id)">
+		&nbsp;&nbsp;<label>Individual</label>
+	</div>
+	<div>
+		<input type="radio" name="partnerType"  class="partnerType input_data" id="partnership" value="35" onclick="check(this.id)">
+		&nbsp;&nbsp;<label>Partnership	</label>
+	</div>
+	<div>
+		<input type="radio" name="partnerType"   class="partnerType input_data" id="pvt" value="37"  onclick="check(this.id)">
+		&nbsp;&nbsp;<label>Pvt Ltd</label>
+	</div>
+	<div>
+		<input type="radio" name="partnerType"   class="partnerType input_data" id="proprietorship" value="36" onclick="check(this.id)">
+		&nbsp;&nbsp;<label>Proprietorship</label>
+		
+	</div>
+</div>
+<div>
+<span class='fieldError' name='firstName' style='display: block;'></span>
+</div>
+<div id="partnerBasicInfo">
+
+</div>
+
+					
+					</div>
+					
+					<div class="clearfix"></div>
+				</div>
+				<!-- #main-contnt contents Ends -->
+			</div>
+			<!-- right contents Ends -->
+		</div>
+	</div>
+	<!-- Site footer -->
+	<div class="bottom" id="divFooter">
+		
+
+	  
+	<style>
+
+.sub-footer-nav{
+	background:url(./images/footer-bg.png) repeat-x;
+	position:relative;
+	
+	width:100%;
+}
+
+
+
+.sub-footer-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sub-footer-nav li {
+    float: left;
+	padding: 0px 10px;
+}
+
+.sub-footer-nav li a {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+	font-size:13px;
+	text-transform:uppercase;
+	padding-left: -15px;
+}
+
+.sub-footer-nav li a:hover, 
+{
+    text-decoration: underline;
+	color:#ebebeb;
+}
+
+
+
+
+
+
+</style>
+<br>
+	    	
+  	<div class="container">
+  	
+     
+
+        		<!-- <div class="footer-wrapper" style="text-align:center;"> -->
+       		
+                <!-- <div class="sub-footer-nav" style="margin: 40px 0px;"> -->
+
+        	<div class="footer" style="margin: -10px 0 -20px 0;">
+        	<footer class="nav-footer sub-footer-nav">
+                   <span><a href="/privacyPolicy.htm" target="_blank">Privacy Policy</a></span>
+                     <span><a href="/disclaimer.htm" target="_blank">Disclaimer</a></span>
+                     <span><a href="/contact.htm" target="_blank">Contact Us</a></span>
+                     <br><br>                                
+				</footer>
+			</div>
+			
+<div style="text-align:center; font-size:12px; background-color:#f7f6f2;  padding: 10px;">Copyright &copy; 2016 MyReferralApp. All rights reserved.</div>
+        </div>
+                 
+				
+			   <!-- </div>
+		</div> -->
+		   
+				
+	</div>
+</body>
+
+</html>
